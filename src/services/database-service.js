@@ -3,8 +3,7 @@
 const oracledb = require('oracledb');
 const dbConfig = require('../config');
 
-async function initialize() {  
-  
+async function initialize() {   
   const pool = await oracledb.createPool(dbConfig.connStringDesenv);
 }
 

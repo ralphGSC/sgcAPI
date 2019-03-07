@@ -5,15 +5,18 @@ module.exports = {
         "user": "desenv",
         "password": "desenv",
         "connectString": "gsc-dbora02/PGSC",
+        "poolMin": 0,
+        "poolMax": 4,
+        "poolIncrement": 1,
+        "poolTimeout": 0
     },
     connStringSepd: {
         "user": "sepd",
         "password": "sepd",
         "connectString": "gsc-dbora02/PGSC",
-    },
-    threadPool: {
-        "poolMin": 10,
-        "poolMax": 10,
-        "poolIncrement": 0
-    }
+        "poolMin": 0,
+        "poolMax": 4,
+        "poolIncrement": 1,
+        "poolTimeout": 0
+    },   
 };

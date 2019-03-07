@@ -13,9 +13,9 @@ const classificacoesRoute = require('./routes/classificacao-route');
 const dbConfig = require('./config');
 const db = require('./services/database-service');
 
-const defaultThreadPoolSize = 4;
+const defaultThreadPoolSize = 20;
 
-process.env.UV_THREADPOOL_SIZE = dbConfig.threadPool.poolMax + defaultThreadPoolSize;
+process.env.UV_THREADPOOL_SIZE = dbConfig.connStringDesenv.poolMax + defaultThreadPoolSize;
 
 async function startup() {
   try {
