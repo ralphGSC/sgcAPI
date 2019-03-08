@@ -4,7 +4,7 @@ const app = require('./src/app');
 const http = require('http');
 const debug = require('debug')('sgcapi:server');
 
-const port = normalizePort(process.env.PORT || '2000');
+const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 const server = http.createServer(app);
