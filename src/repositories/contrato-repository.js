@@ -21,7 +21,9 @@ exports.get = async (data) => {
     14	Orçamentista
     */
 
-    var sql = [];
+    let sql = [];
+    let hasPerfil = true;
+    let res;
 
     sql.push(`SELECT SCO.SGC_ID,ST.SGC_DESC_TIPO,SC.SGC_DESC_CLASSIFICACAO,C.SGC_DESC_CRITICIDADE,
                      S.NOME_USUARIO,SP.NOME AS NOME_EMPRESA
@@ -60,12 +62,7 @@ exports.get = async (data) => {
                                 FROM SGC_FLUXO F
                                 WHERE F.SGC_ID_CONTRATO = SF.SGC_ID_CONTRATO                                                          
                                   AND F.SGC_ID_STATUS = '2'
-                                  AND F.SGC_ID_PERFIL ='3') `);
-            break;
-        case '4':
-            break;
-        case '5':
-            break;
+                                  AND F.SGC_ID_PERFIL ='3') `);           
         case '6':
             sql.push(`AND SF.SGC_ID_STATUS !='4' 
                       AND SF.SGC_ID_CONTRATO IN 
@@ -78,13 +75,15 @@ exports.get = async (data) => {
             break;
 
         default:
+            hasPerfil = false;
             break;
-    }
-
-    sql.push(`ORDER BY SCO.SGC_ID DESC `);
-
-    const res = await db.comandText(sql.join(""));    
+    }    
     
-    return res.rows;
+    sql.push(`ORDER BY SCO.SGC_ID DESC `);
+   
+    if (hasPerfil)
+       res = await db.comandText(sql.join(""));  
+    
+    return hasPerfil? res.rows : [];
 }
 

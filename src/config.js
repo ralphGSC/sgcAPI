@@ -10,13 +10,13 @@ module.exports = {
         "poolIncrement": 1,
         "poolTimeout": 0
     },
-    connStringSepd: {
-        "user": "sepd",
-        "password": "sepd",
-        "connectString": "gsc-dbora02/PGSC",
-        "poolMin": 0,
-        "poolMax": 4,
-        "poolIncrement": 1,
-        "poolTimeout": 0
-    },   
+    // connStringSepd: {
+    //     "user": "sepd",
+    //     "password": "sepd",
+    //     "connectString": "gsc-dbora02/PGSC",
+    //     "poolMin": 0,
+    //     "poolMax": 4,
+    //     "poolIncrement": 1,
+    //     "poolTimeout": 0
+    // },   
 };
