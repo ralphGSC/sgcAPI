@@ -15,7 +15,7 @@ const db = require('./services/database-service');
 
 const defaultThreadPoolSize = 20;
 
-process.env.UV_THREADPOOL_SIZE = dbConfig.connStringDesenv.poolMax + defaultThreadPoolSize;
+process.env.UV_THREADPOOL_SIZE = dbConfig.connStringSepd.poolMax + defaultThreadPoolSize;
 
 async function startup() {
   try {
