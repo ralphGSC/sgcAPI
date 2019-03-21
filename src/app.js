@@ -9,6 +9,7 @@ const app = express();
 const indexRoute = require('./routes/index-route');
 const contratosRoute = require('./routes/contrato-route');
 const classificacoesRoute = require('./routes/classificacao-route');
+const fluxosRoute = require('./routes/fluxo-route');
 
 const dbConfig = require('./config');
 const db = require('./services/database-service');
@@ -81,5 +82,6 @@ app.use(function (req, res, next) {
 app.use('/', indexRoute);
 app.use('/sgc/contratos', contratosRoute);
 app.use('/sgc/classificacoes', classificacoesRoute);
+app.use('/sgc/fluxos', fluxosRoute);
 
 module.exports = app;
