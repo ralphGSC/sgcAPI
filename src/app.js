@@ -10,6 +10,7 @@ const indexRoute = require('./routes/index-route');
 const contratosRoute = require('./routes/contrato-route');
 const classificacoesRoute = require('./routes/classificacao-route');
 const fluxosRoute = require('./routes/fluxo-route');
+const perfilRoute = require('./routes/perfil-route');
 
 const dbConfig = require('./config');
 const db = require('./services/database-service');
@@ -83,5 +84,6 @@ app.use('/', indexRoute);
 app.use('/sgc/contratos', contratosRoute);
 app.use('/sgc/classificacoes', classificacoesRoute);
 app.use('/sgc/fluxos', fluxosRoute);
+app.use('/sgc/perfis', perfilRoute);
 
 module.exports = app;

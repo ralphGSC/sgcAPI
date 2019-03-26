@@ -9,9 +9,9 @@ exports.get = async(req, res, next) => {
             sgc_id_perfil: req.params.sgc_id_perfil
            }); 
         res.status(200).send(data);
-    } catch (e) {
-        console.log(e.message);
+    } catch (e) {     
         res.status(500).send([{
+            COD: 500,
             MSN: 'Falha ao processar requisição'
         }]);
     }

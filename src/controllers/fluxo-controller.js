@@ -16,11 +16,13 @@ exports.put = async(req, res, next) => {
             IP: ip
         });
         res.status(200).send([{
+            COD: 200,
             MSN: 'Requisição efetuada com sucesso'
         }]);
     } catch (e) {
         res.status(500).send([{
-            message: 'Falha ao processar requisição'
+            COD: 500,
+            MSN: 'Falha ao processar requisição'
         }]);
     }
 };

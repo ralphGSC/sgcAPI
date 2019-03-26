@@ -6,9 +6,9 @@ exports.get = async(req, res, next) => {
     try {       
         var data = await repository.get(); 
         res.status(200).send(data);
-    } catch (e) {
-        console.log(e.message);
+    } catch (e) {      
         res.status(500).send([{
+            COD: 500,
             MSN: 'Falha ao processar requisição'
         }]);
     }
@@ -22,10 +22,12 @@ exports.post = async(req, res, next) => {
         });   
 
         res.status(201).send([{
+            COD: 201,
             MSN: 'Requisição efetuada com sucesso'
         }]);
     } catch (e) {
         res.status(500).send([{
+            COD: 500,
             MSN: 'Falha ao processar requisição'
         }]);
     }
@@ -35,11 +37,13 @@ exports.put = async(req, res, next) => {
     try {
         await repository.put(req.params.sgc_id, req.body);
         res.status(200).send([{
+            COD: 200,
             MSN: 'Requisição efetuada com sucesso'
         }]);
     } catch (e) {
         res.status(500).send([{
-            message: 'Falha ao processar requisição'
+            COD: 500,
+            MSN: 'Falha ao processar requisição'
         }]);
     }
 };
@@ -48,11 +52,13 @@ exports.delete = async(req, res, next) => {
     try {
         await repository.delete(req.params.sgc_id)
         res.status(200).send([{
+            COD: 200,
             MSN: 'Requisição efetuada com sucesso'
         }]);
     } catch (e) {
         res.status(500).send([{
-            message: 'Falha ao processar requisição'
+            COD: 500,
+            MSN: 'Falha ao processar requisição'
         }]);
     }
 };
