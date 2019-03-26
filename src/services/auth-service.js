@@ -15,12 +15,14 @@ exports.authorize = function (req, res, next) {
 
     if (!token) {
         res.status(401).json([{
+            COD: 401,
             MSN: 'Acesso Restrito'
         }]);
     } else {
         jwt.verify(token, global.KEY, function (error) {
             if (error) {
                 res.status(401).json([{
+                    COD: 401,
                     MSN: 'Token Inválido'
                 }]);
             } else {
